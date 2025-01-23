@@ -32,12 +32,14 @@ function handleCellClick(event) {
 
     if (checkWinner()) {
         message.textContent = `${currentPlayer} wins!`;
+        document.body.style.backgroundColor = "#90EE90"; // Light green background on win
         gameActive = false;
         return;
     }
 
     if (board.every(cell => cell !== '')) {
         message.textContent = `It's a draw!`;
+        document.body.style.backgroundColor = "#D3D3D3"; // Light gray background on draw
         gameActive = false;
         return;
     }
@@ -59,4 +61,5 @@ function resetGame() {
     currentPlayer = 'X';
     gameActive = true;
     message.textContent = '';
+    document.body.style.backgroundColor = "#f52323"; // Reset background color to initial value
 }
